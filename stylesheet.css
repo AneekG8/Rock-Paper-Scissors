@@ -1,0 +1,134 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "verdana";
+}
+body{
+	background: #232323;
+	position: relative;
+}
+.game{
+	height: 100vh;
+	background: #091921;
+	opacity: 0.05;
+	pointer-events: none;
+}
+.score-disp{
+	height: 30vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: white;
+	background: #0c2835;
+}
+.score-disp h3{
+	font-weight: 300;
+}
+.score-disp p{
+	text-align: center;
+}
+.volume{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border-radius: 50%;
+	background: #091921;
+}
+.match{
+	height: 60vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.match h2,.intro h2{
+	font-weight: 300;
+	letter-spacing: 1.5px;
+	color: white;
+}
+.hands img{
+	width: 150px;
+	height: 150px;
+	margin: 0 20px;
+}
+.player-hand{
+	transform: rotateY(180deg);
+}
+@media(max-width: 385px){
+	.hands img{
+	width: 120px;
+	height: 120px;
+	margin: 0 5px;
+	}
+}
+button{
+	font-size: 15px;
+	padding: 7.5px 10px;
+	margin: 8px;
+	background-color: #0c2835;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	color: white;
+	opacity: 1;
+	cursor: pointer;
+}
+button:hover{
+	opacity: 0.8;
+}
+.intro{
+	width: 50vh;
+	height: 60vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #091921;
+	border-radius: 8px;
+}
+/*additional classes*/
+.fade-in{
+	opacity: 1;
+	pointer-events: all;
+	transition: opacity 0.5s ease 0.5s;
+	pointer-events: all;
+}
+.fade-out{
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s ease;
+	pointer-events: none;
+}
+/* animations */
+@keyframes shake-player{
+	0%{
+		transform: rotateY(180deg) translateY(0);
+	}
+	25%{
+		transform: rotateY(180deg) translateY(20px);
+	}
+	75%{
+		transform: rotateY(180deg) translateY(-20px);
+	}
+	100%{
+		transform: rotateY(180deg) translateY(0);
+	}
+}
+@keyframes shake-computer{
+	0%{
+		transform: translateY(0);
+	}
+	25%{
+		transform: translateY(20px);
+	}
+	75%{
+		transform: translateY(-20px);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
